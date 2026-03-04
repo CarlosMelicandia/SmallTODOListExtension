@@ -12,19 +12,13 @@ todos.forEach((todo, index) => {
     const li = document.createElement('li');
     li.className = 'todo-item' + (todo.done ? ' done' : '');
 
-    const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    checkbox.checked = todo.done;
-    checkbox.id = `todo-${index}`;
-    checkbox.addEventListener('change', () => {
-    todos[index].done = checkbox.checked;
+    const span = document.createElement('span');
+    span.textContent = todo.text;
+    span.addEventListener('click', () => {
+    todos[index].done = !todos[index].done;
     saveTodos();
     renderTodos();
     });
-
-    const label = document.createElement('label');
-    label.htmlFor = `todo-${index}`;
-    label.textContent = todo.text;
 
     const deleteBtn = document.createElement('button');
     deleteBtn.className = 'delete-btn';
@@ -36,8 +30,7 @@ todos.forEach((todo, index) => {
     renderTodos();
     });
 
-    li.appendChild(checkbox);
-    li.appendChild(label);
+    li.appendChild(span);
     li.appendChild(deleteBtn);
     list.appendChild(li);
 });
@@ -45,6 +38,7 @@ todos.forEach((todo, index) => {
 const remaining = todos.filter(t => !t.done).length;
 document.getElementById('item-count').textContent =
     `${remaining} item${remaining !== 1 ? 's' : ''} left`;
+
 }
 
 function addTodo() {
