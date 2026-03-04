@@ -7,8 +7,8 @@ function createSticky() {
     el.innerHTML = `
         <div id="todo-drag-handle">PlaceHolder</div>
         <div class="input-row">
-            <input type="text" id="todo-input" placeholder="Add a new task..." autocomplete="off">
-            <button id="add-btn">Add</button>
+            <input type="text" id="todo-input" placeholder="add a new task..." autocomplete="off">
+            <button id="add-btn">add</button>
         </div>
         <ul id="todo-list"></ul>
         <div class="footer">
@@ -33,9 +33,13 @@ function createSticky() {
 
     document.addEventListener('mousemove', e => {
         if (!isDragging) return;
-        el.style.left = (origX + e.clientX - startX) + 'px';
-        el.style.top = (origY + e.clientY - startY) + 'px';
-        el.style.right = 'auto';
+        const maxX = window.innerWidth - el.offsetWidth;
+        const maxY = window.innerHeight - el.offsetHeight;
+        const newX = Math.min(Math.max(0, origX + e.clientX - startX), maxX);
+        const newY = Math.min(Math.max(0, origY + e.clientY - startY), maxY);
+        el.style.setProperty('left', newX + 'px', 'important');
+        el.style.setProperty('top', newY + 'px', 'important');
+        el.style.setProperty('right', 'auto', 'important');
     });
 
     document.addEventListener('mouseup', () => { isDragging = false; });
