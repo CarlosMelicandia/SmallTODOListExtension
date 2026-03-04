@@ -12,7 +12,7 @@
     width: 300px !important;
     height: 280px !important;
     background: linear-gradient(to bottom, #FEF8BE 0%, #FEF8BE 15%, #FFECA4 19%) !important;
-    border-radius: 4px !important;
+    border-radius: 0px !important;
     box-shadow: 3px 3px 12px rgba(0,0,0,0.2) !important;
     z-index: 2147483647 !important;
     padding: 8px 16px 16px !important;
@@ -58,11 +58,12 @@
 
 #todo-sticky #todo-input:focus {
     border: none !important;
+    color: #3c3c3c !important;
 }
 
 #todo-sticky #add-btn {
     padding: 8px 14px !important;
-    color: #3c3c3c !important;
+    color: #999 !important;
     border: none !important;
     border-radius: 6px !important;
     cursor: pointer !important;

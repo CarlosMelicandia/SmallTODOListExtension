@@ -7,13 +7,13 @@ function createSticky() {
     el.innerHTML = `
         <div id="todo-drag-handle">PlaceHolder</div>
         <div class="input-row">
-            <input type="text" id="todo-input" placeholder="add a new task..." autocomplete="off">
+            <input type="text" id="todo-input" placeholder="new task..." autocomplete="off">
             <button id="add-btn">add</button>
         </div>
         <ul id="todo-list"></ul>
         <div class="footer">
             <span id="item-count"></span>
-            <button id="clear-btn">Clear done</button>
+            <button id="clear-btn">clear done</button>
         </div>
     `;
     document.body.appendChild(el);
@@ -93,7 +93,7 @@ function renderTodos() {
 
     const remaining = todos.filter(t => !t.done).length;
     stickyEl.querySelector('#item-count').textContent =
-        `${remaining} item${remaining !== 1 ? 's' : ''} left`;
+        `${remaining} item${remaining !== 1 ? 's' : ''}`;
     stickyEl.querySelector('.footer').style.display = todos.length > 0 ? 'flex' : 'none';
 }
 
