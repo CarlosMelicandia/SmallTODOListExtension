@@ -28,7 +28,7 @@ color: #3c3c3c;
 .input-row {
 display: flex;
 gap: 8px;
-margin-bottom: 12px;
+margin-bottom: 0px;
 }
 
 #todo-input {
