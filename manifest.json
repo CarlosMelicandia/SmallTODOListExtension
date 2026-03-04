@@ -4,8 +4,17 @@
     "version": "1.0.0",
     "description": "A simple to-do list extension",
     "action": {
-    "default_popup": "popup.html",
-    "default_title": "Todo List"
+        "default_title": "Todo List"
     },
-    "permissions": ["storage"]
+    "background": {
+        "service_worker": "src/background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["src/content.js"],
+            "css": ["public/content.css"]
+        }
+    ],
+    "permissions": ["storage", "activeTab", "scripting"]
 }
