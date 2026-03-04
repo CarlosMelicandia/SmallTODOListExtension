@@ -1,12 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
 * {
 box-sizing: border-box;
 margin: 0;
 padding: 0;
+font-family: "Caveat", cursive;
 }
 
 body {
-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-background: #f9f9f9;
+background: #FFECA4;
 width: 300px;
 }
 
@@ -15,10 +17,10 @@ padding: 16px;
 }
 
 h1 {
-font-size: 18px;
+font-size: 24px;
 font-weight: 600;
 margin-bottom: 12px;
-color: #1a1a1a;
+color: #3c3c3c;
 }
 
 .input-row {
@@ -30,11 +32,11 @@ margin-bottom: 12px;
 #todo-input {
 flex: 1;
 padding: 8px 10px;
-border: 1px solid #ddd;
+border: 1px solid #3c3c3c;
 border-radius: 6px;
-font-size: 13px;
+font-size: 18px;
 outline: none;
-background: #fff;
+background: #FFECA4;
 }
 
 #todo-input:focus {
@@ -47,7 +49,7 @@ background: #5b8dee;
 color: #fff;
 border: none;
 border-radius: 6px;
-font-size: 13px;
+font-size: 18px;
 cursor: pointer;
 font-weight: 500;
 }
@@ -119,14 +121,14 @@ margin-top: 12px;
 }
 
 #item-count {
-font-size: 12px;
+font-size: 18px;
 color: #999;
 }
 
 #clear-btn {
 background: none;
 border: none;
-font-size: 12px;
+font-size: 18px;
 color: #999;
 cursor: pointer;
 padding: 0;
