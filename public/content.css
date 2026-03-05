@@ -80,9 +80,22 @@
     display: flex !important;
     flex-direction: column !important;
     gap: 6px !important;
-    max-height: 320px !important;
-    overflow-y: auto !important;
+    max-height: 120px !important;
+    overflow-y: scroll !important;
     margin-top: 0 !important;
+}
+
+#todo-sticky #todo-list::-webkit-scrollbar {
+    width: 6px !important;
+}
+
+#todo-sticky #todo-list::-webkit-scrollbar-track {
+    background: transparent !important;
+}
+
+#todo-sticky #todo-list::-webkit-scrollbar-thumb {
+    background: #ccc !important;
+    border-radius: 3px !important;
 }
 
 #todo-sticky .todo-item {
